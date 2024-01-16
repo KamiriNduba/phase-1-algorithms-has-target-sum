@@ -1,17 +1,30 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  // Pseudocode:
+  // Iterate through each element in the array
+  // For each element, check if there is another element in the array
+  // such that the sum of the current element and the other element is equal to the target
+  // If such a pair is found, return true
+  // If no such pair is found, return false
+
+  // Code:
+  for (let i = 0; i < array.length; i++) {
+    for (let j = i + 1; j < array.length; j++) {
+      if (array[i] + array[j] === target) {
+        return true;
+      }
+    }
+  }
+  return false;
 }
 
 /* 
-  Write the Big O time complexity of your function here
-*/
+  Big O time complexity: O(n^2) - Quadratic time complexity due to nested loops.
 
-/* 
-  Add your pseudocode here
-*/
-
-/*
-  Add written explanation of your solution here
+  Explanation:
+  - The function uses a brute-force approach with nested loops.
+  - The outer loop iterates through each element in the array.
+  - The inner loop, starting from the next element, checks if the sum of the current pair equals the target.
+  - If a pair is found, the function returns true; otherwise, it returns false.
 */
 
 // You can run `node index.js` to view these console logs
